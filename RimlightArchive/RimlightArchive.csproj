@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0AFE0252-93B7-4BC3-9200-E10C6EA74FDD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RimlightArchive</RootNamespace>
+    <AssemblyName>RimlightArchive</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UnlimitedHugs.Rimworld.HugsLib.6.1.1\lib\net35\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0JecsTools, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\0JecsTools.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AbilityUser, Version=1.18.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\AbilityUser.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AbilityUserAI, Version=1.18.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\AbilityUserAI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Apparel\GizmoStormlightPawnStatus.cs" />
+    <Compile Include="Apparel\GizmoStormlightApparelStatus.cs" />
+    <Compile Include="Apparel\InfusedApparel.cs" />
+    <Compile Include="Apparel\Shardplate.cs" />
+    <Compile Include="Apparel\SphereBag.cs" />
+    <Compile Include="Comps\CompAbilityUser_Investiture.cs" />
+    <Compile Include="Comps\ThingWithComps_Flight.cs" />
+    <Compile Include="Comps\ThingWithComps_Launch.cs" />
+    <Compile Include="Comps\ThingComp_Shardplate.cs" />
+    <Compile Include="Comps\HediffComp_Shardplate.cs" />
+    <Compile Include="Comps\Hediff_Injury_Shardburn.cs" />
+    <Compile Include="Comps\HediffComp_RegeneratingPart.cs" />
+    <Compile Include="Conditions\GameCondition_Highstorm.cs" />
+    <Compile Include="Conditions\IncidentWorker_Highstorm.cs" />
+    <Compile Include="Defs\RadiantAbilityDef.cs" />
+    <Compile Include="Defs\RadiantDefOf.cs" />
+    <Compile Include="Projectiles\Projectile_Regrowth.cs" />
+    <Compile Include="Things\LashedPawnLeaving.cs" />
+    <Compile Include="Things\LashedPawn.cs" />
+    <Compile Include="Verbs\Verb_Flight.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
+    <Compile Include="Comps\HediffComp_Radiant.cs" />
+    <Compile Include="Comps\HediffComp_Regeneration.cs" />
+    <Compile Include="Needs\Need_Stormlight.cs" />
+    <Compile Include="RadiantData.cs" />
+    <Compile Include="RadiantAbility.cs" />
+    <Compile Include="RimlightArchive.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Verbs\Verb_EdgedancerRegrowth.cs" />
+    <Compile Include="Verbs\Verb_Adhesion.cs" />
+    <Compile Include="Verbs\Verb_Launch.cs" />
+    <Compile Include="Verbs\Verb_MeleeShardCut.cs" />
+    <Compile Include="Verbs\Verb_Heal.cs" />
+    <Compile Include="Workers\InteractionWorker_Radiant.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="deleteme.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
